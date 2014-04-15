@@ -109,9 +109,7 @@ class StaticPagesQueue extends DataObject {
 		}
 		self::remove_old_cache(self::$urls);
 		// Flush the cache so DataObject::get works correctly
-		if(DB::affectedRows()) {
-			singleton(__CLASS__)->flushCache();
-		}
+		singleton(__CLASS__)->flushCache();
 		self::$insert_statements = array();
 	}
 	
